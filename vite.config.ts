@@ -8,6 +8,11 @@ export default defineConfig({
     environment: 'jsdom',
     coverage: {
       reporter: ['text', 'json', 'html', 'json-summary'],
-    }
+      lines: 60,
+      branches: 60,
+      functions: 60,
+      statements: 60,
+    },
+    
   },
 })
