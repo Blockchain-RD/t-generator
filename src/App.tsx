@@ -4,7 +4,7 @@ function App() {
 
   return (
     <div className="App">
-      <p>Transaction generator</p>
+      <p>Transactions generator</p>
     </div>
   )
 }
