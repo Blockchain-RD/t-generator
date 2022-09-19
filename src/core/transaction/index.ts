@@ -1,6 +1,6 @@
-import { BlockchainReference } from "./blockchain";
-import { Message } from "./message";
-import { Template } from "./template";
+import { BlockchainReference } from "../blockchain";
+import { Message } from "../message";
+import { Template } from "../template";
 
 export interface Transaction {
     chainId: string,
@@ -9,6 +9,10 @@ export interface Transaction {
     fees: string,
     messages: Message[],
     memo: string
+}
+
+export function isValidTransaction(transaction: Transaction): boolean {
+    return true
 }
 
 export function newTransaction(template: Template, blockchain: BlockchainReference, memo: string) {
@@ -20,6 +24,8 @@ export function newTransaction(template: Template, blockchain: BlockchainReferen
         chainId: blockchain.chainId,
         rpc: blockchain.rpc
     }
+
+    isValidTransaction(transaction)
 
     return transaction
 }

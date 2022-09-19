@@ -3,9 +3,17 @@ export interface Message {
     value: object
 }
 
+export function isValidMessage(message: Message): boolean {
+    return true
+}
+
 export function newMessage(type: string, value: object) {
-    return {
+    const message: Message = {
         typeUrl: type,
         value: value 
-    } as Message
+    }
+
+    isValidMessage(message)
+
+    return message
 }
